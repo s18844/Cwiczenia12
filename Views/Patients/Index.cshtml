@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Cwiczenia12.Models.Patient>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Wyswietlenie pacjentów</h1>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Imię</th>
+            <th>Nazwisko</th>
+            <th>Data Urodzenia</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.IdPatient</td>
+                <td>@p.FirstName</td>
+                <td>@p.LastName</td>
+                <td>@p.Birthdate</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

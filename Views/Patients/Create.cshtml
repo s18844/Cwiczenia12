@@ -1,0 +1,30 @@
+﻿@model Cwiczenia12.Models.Patient
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Dodaj pacjenta</h1>
+<form method="post" action="/patients/create">
+    <div class="row">
+        <div class="input-field col s6">
+            <label>
+                Imię
+            </label>
+            @Html.EditorFor(d => d.FirstName)
+            <span>@Html.ValidationMessageFor(d => d.FirstName)</span>
+        </div>
+        <div class="input-field col s6">
+            <label>Nazwisko</label>
+            @Html.EditorFor(d => d.LastName)
+            <span>@Html.ValidationMessageFor(d => d.LastName)</span>
+        </div>
+        <div class="input-field col s6">
+            <label>Urodziny</label>
+            @Html.EditorFor(d => d.Birthdate)
+            <span>@Html.ValidationMessageFor(d => d.Birthdate)</span>
+        </div>
+    </div>
+
+    <input type="submit" value="wyślij" class="btn" />
+</form>
